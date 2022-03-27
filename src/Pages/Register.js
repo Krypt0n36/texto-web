@@ -57,7 +57,8 @@ export default function Register() {
 
             const payload = {
                 identifier: identifier,
-                publicKey: publicKey,
+		savePrivateKey:1,
+		publicKey: publicKey,
                 encPrivateKey: encPrivateKey
             }
 		console.log(payload)
