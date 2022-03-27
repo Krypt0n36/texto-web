@@ -1,14 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {MantineProvider} from '@mantine/core';
+import {Routes,  Route, Link, BrowserRouter} from 'react-router-dom';
+import Login from './Pages/Login.js';
+import Register from './Pages/Register.js';
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+<React.StrictMode>
+<MantineProvider theme={{colorScheme:'dark'}} withGlobalStyles>
+	<BrowserRouter>
+	<Routes>
+		<Route path="/" element={<Login />} />
+		<Route path="register" element={<Register />} />
+		<Route path="login" element={<Login />} />
+	</Routes>
+	</BrowserRouter>
+</MantineProvider>
+</React.StrictMode>,
+	document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
